@@ -1,8 +1,31 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px;
 }
 
 a {
   color: #00B7FF;
+}
+#tn {
+	background-color: rgb(243, 243, 243);
+	font: 13px/1.4 Helvetica,arial,freesans,clean,sans-serif;
+	border-bottom: 1px solid rgb(229, 229, 229);
+	min-width: 1000px;
+	min-height: 30px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+#logo {
+	display: inline;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#lg {
+	display: inline;
+	float:left;
+}
+#user {
+	padding-top: 5px;
+	float: right;
+	
 }

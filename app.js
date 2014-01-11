@@ -5,6 +5,7 @@
 
 var express = require('express');
 var routes = require('./routes');
+var nav = require('./global/nav');
 var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
@@ -24,6 +25,11 @@ app.use(express.cookieParser('your secret here'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.configure('development', function(){
+  app.use(express.errorHandler());
+  app.locals.pretty = true;
+});
 
 // development only
 if ('development' == app.get('env')) {

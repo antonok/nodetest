@@ -3,6 +3,9 @@
  * GET home page.
  */
 
-exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+require('../global/nav.js')
+
+exports.index = function(req, res) {
+  console.log(nav(req, res));
+  res.render('index', { title: 'Express', user: user});
 };

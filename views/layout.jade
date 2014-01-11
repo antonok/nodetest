@@ -4,4 +4,13 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
+    div(id='tn') 
+      div(id='lg')
+        a(href='/'): img(src='/images/logo.jpeg' id='logo')
+      #user
+        if typeof user === 'undefined' || user.loggedin == false
+          div: a(href='/signin') signin
+        else
+          span welcome
+
     block content
