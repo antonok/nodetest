@@ -1,11 +1,14 @@
-
 /*
- * GET home page.
+ * Global nav.
  */
-console.log('nav is being loaded?');
-
 
 nav = function(req, res) {
-	console.log('hello the nav is here');
-	user = {loggedin: false};
+	var isLoggedin = false;
+	if (req.session.loggedin) {
+		isLoggedin = true;
+	}
+
+	navProps = {user: {loggedin: isLoggedin},
+					currentUrl: req.req
+					};
 };

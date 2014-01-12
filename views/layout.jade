@@ -8,9 +8,11 @@ html
       div(id='lg')
         a(href='/'): img(src='/images/logo.jpeg' id='logo')
       #user
-        if typeof user === 'undefined' || user.loggedin == false
+        if typeof navProps === 'undefined' || navProps.user.loggedin == false
           div: a(href='/signin') signin
         else
           span welcome
-
-    block content
+          span  | 
+          span: a(href='/dosignout') signout
+    div(id='content')
+      block content
