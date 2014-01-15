@@ -8,6 +8,8 @@
   "dependencies": {
     "express": "3.4.7",
     "jade": "*",
-    "nodemailer": "*"
+    "nodemailer": "*",
+    "mongodb": "*",
+    "monk": "*"
   }
 }
