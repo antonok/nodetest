@@ -14,7 +14,9 @@ exports.dosign = function(req, res) {
   console.log('doSignin with token: ' + token);
   lookupToken(token, function(email) {
   	console.log('found ' + email + ' for token ' + token);
+
   	req.session.loggedin = true;
+  	req.session.name = email.substr(0, email.indexOf('@'));
   	res.redirect('/');	
   });
   

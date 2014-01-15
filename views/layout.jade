@@ -11,7 +11,7 @@ html
         if typeof navProps === 'undefined' || navProps.user.loggedin == false
           div: a(href='/signin') signin
         else
-          span welcome
+          span welcome #{navProps.user.name}
           span  | 
           span: a(href='/dosignout') signout
     div(id='content')
