@@ -41,6 +41,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/signin', signin.index);
 app.get('/dosignin', signin.dosign);
+app.post('/dosignin', signin.dosignPost)
 app.get('/dosignout', signin.dosignout);
 
 http.createServer(app).listen(app.get('port'), function(){
