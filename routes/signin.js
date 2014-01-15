@@ -12,10 +12,12 @@ exports.dosign = function(req, res) {
   nav(req, res);
   var token = req.query.t;
   console.log('doSignin with token: ' + token);
-  var email = lookupToken(token);
-  console.log('found ' + email + ' for token ' + token);
-  req.session.loggedin = true;
-  res.redirect('/');
+  lookupToken(token, function(email) {
+  	console.log('found ' + email + ' for token ' + token);
+  	req.session.loggedin = true;
+  	res.redirect('/');	
+  });
+  
 }
 
 exports.dosignPost = function(req, res) {
@@ -75,11 +77,11 @@ storeToken = function(emailAddress, token) {
 	}
 }
 
-lookupToken = function(token) {
+lookupToken = function(token, cb) {
 	var collection = db.get('tokens');
 	collection.findOne({token: token}, function (err, item) {
 		console.log('>>>found ' + item.email);
-		return item.email;
+		cb(item.email);
 	});
 }
 
